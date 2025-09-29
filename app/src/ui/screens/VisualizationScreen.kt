@@ -126,10 +126,10 @@ fun VisualizationScreen(
         ExportDialog(
             onDismiss = { showExportDialog = false },
             onExport = { format ->
+                val context = LocalContext.current
                 coroutineScope.launch {
-                    val context = LocalContext.current
                     ExportUtils.exportMoodData(
-                        context = /* context */,
+                        context = context,
                         moodLogs = moodLogs,
                         format = format
                     )

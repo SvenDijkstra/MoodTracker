@@ -1,0 +1,56 @@
+#---------------------------------------------------#
+# Built/Generated Files
+#---------------------------------------------------#
+/build
+/app/build
+/out
+/captures
+.externalNativeBuild
+.cxx/
+/gradle
+!/gradle/wrapper/gradle-wrapper.jar # Keep the wrapper JAR for consistency
+# Compiled files
+*.apk
+*.aab
+*.aar
+*.ap_
+*.dex
+*.class
+# Log files
+*.log
+# NDK
+/obj
+
+#---------------------------------------------------#
+# IDE and Local Configuration
+#---------------------------------------------------#
+# Android Studio / IntelliJ IDEA files
+.idea/
+# Except for necessary files inside .idea/ that should be tracked
+!/.idea/codeStyles
+!/.idea/inspectionProfiles
+!/.idea/runConfigurations
+!/.idea/*.iml
+*.iml
+*.iws
+*.ipr
+# Local configuration file (SDK path, etc.)
+local.properties
+
+#---------------------------------------------------#
+# Keystore and Signing Files
+#---------------------------------------------------#
+# Keystore files
+*.jks
+*.keystore
+# Google Services (e.g. APIs or Firebase)
+# Uncomment the line below if you don't want to commit your google-services.json
+# /app/google-services.json
+
+#---------------------------------------------------#
+# System/OS Specific Files
+#---------------------------------------------------#
+# OSX
+.DS_Store
+# Windows
+Thumbs.db
