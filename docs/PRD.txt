@@ -1,0 +1,142 @@
+﻿Product Requirements Document: Simple Mood Tracker
+1. Introduction
+1.1 Goal
+The primary goal of the Simple Mood Tracker (code name: Aura) is to provide users with an extremely fast, non-intrusive method for logging their emotional state and the intensity of that state throughout the day. This provides the user with an intuitive, longitudinal view of their emotional patterns to encourage self-awareness and simple data export for personal analysis or clinical use.
+1.2 Scope
+* Platform: Native Android Application (minimum API 26).
+* Core Functionality: Single-screen mood entry via 5-point scale.
+* Reporting: Real-time line graphing and raw data export.
+* Data Storage: All user data must be stored locally on the Android device. The app must function fully without any internet connection.
+* Non-Scope: AI analysis, social sharing, push notifications, advanced journaling features.
+1.3 Target Audience
+The primary user is an individual seeking to monitor their emotional baseline for self-improvement or in conjunction with therapy/counseling.
+2. Core Features (User Stories)
+ID
+	Feature
+	Description
+	FEAT-01
+	Mood Logging
+	As a user, I want to quickly tap one of the 5 smileys to log my current mood at a specific point in time.
+	FEAT-02
+	Intensity Logging (Hold)
+	As a user, I want to press and hold a smiley button to indicate the intensity or severity of that mood. The longer I hold, the higher the severity value should be recorded.
+	FEAT-03
+	Visualization
+	As a user, I want to view a line graph of my mood values over time to identify trends and patterns.
+	FEAT-04
+	Custom Time Range
+	As a user, I want to select custom start and end dates/times to focus the mood graph on a specific period.
+	FEAT-05
+	Data Export
+	As a user, I want to export my raw mood data in common formats (CSV, JSON, TXT) for external analysis.
+	3. UI/UX Requirements
+3.1 Mood Entry Screen (Home)
+Requirement
+	Description
+	UI-01
+	5 Smileys: Display five distinct, centered buttons representing the mood scale. Smiley icons must be simple, flat icons.
+	UI-02
+	Scale Labels: The scale should correspond to numerical values 0 (Very Sad), 1 (Sad), 2 (Neutral), 3 (Happy), 4 (Very Happy).
+	UI-03
+	Tap Action: A single tap registers a mood with a minimum severity value of 1.
+	UI-04
+	Hold Feedback: While holding, the smiley must grow larger and begin shaking to visually indicate increasing severity. At maximum severity (10), the Very Sad (0) and Very Happy (4) smileys must transform into exaggerated icons (e.g., an extremely angry or ecstatic face) to confirm max intensity.
+	UI-05
+	Hold Confirmation: Upon releasing the button, a subtle confirmation message (e.g., "Mood logged!") should briefly appear.
+	UI-13
+	Aesthetics: The app must use a light theme with a calming, slightly sterile color palette (e.g., shades of cool blue and green) to avoid influencing the user's mood.
+	3.2 Visualization Screen (Graph)
+Requirement
+	Description
+	UI-06
+	Chart Type: Must be a clear, responsive line graph.
+	UI-07
+	Y-Axis Labeling: The Y-Axis must display the text labels (Very Sad, Sad, Neutral, Happy, Very Happy) instead of numerical values.
+	UI-08
+	X-Axis: Represents Time.
+	UI-09
+	Preset Filters: Must include visible buttons/tabs for: 8 Hours, 12 Hours, 24 Hours, 1 Week, 1 Month, 1 Year. The default selection for new users must be 1 Week.
+	UI-10
+	Custom Range Input: A dedicated area for selecting custom date and time ranges.
+	UI-11
+	Custom Range Defaults: The calendar date picker must default to Today, and the clock picker must default to 0:00 (12:00 AM).
+	UI-12
+	Filter Persistence: The application must remember and default to the user's last selected time filter (preset or custom) upon subsequent visits to the graph screen.
+	3.3 Navigation
+Requirement
+	Description
+	UI-14
+	Primary Navigation: The user must be able to switch between the Mood Entry and Visualization screens using a Bottom Navigation Bar.
+	UI-15
+	Gesture Navigation: The user must also be able to swipe left and right on the screen to switch between the two primary views.
+	4. Data & Logic Requirements
+4.1 Data Capture
+Every logged event must capture and store the following fields:
+1. timestamp: UTC time and date when the button was pressed/released.
+2. mood_value: A numerical value representing the selected smiley, ranging from 0 (Very Sad) to 4 (Very Happy).
+3. severity: A numerical value representing the intensity, ranging from 1 (Minimum) to 10 (Maximum).
+4.2 Data Visualization Logic
+ID
+	Requirement
+	Description
+	LOGIC-01
+	Severity Mapping (Critical Detail)
+	The duration of the button hold must be mapped to a severity score. Max hold time is 5 seconds. The calculation is: Severity = ROUND(seconds_held * 2, 0), where the result is capped at 10. A tap (duration < 0.5 seconds) defaults to the minimum severity of 1.
+	LOGIC-02
+	Graph Aggregation
+	For views longer than 24 hours (Week, Month, Year), the displayed line graph points should represent the daily average of all logged mood values for that 24-hour period.
+	LOGIC-03
+	Missing Data
+	If no data is logged within a specific time period on the graph, the line should break or be interpolated smoothly, indicating no data points were recorded.
+	4.3 Export Functionality
+ID
+	Requirement
+	Description
+	DATA-01
+	Export Formats
+	Export must support TXT, CSV, and JSON.
+	DATA-02
+	Export Location & Confirmation: Exported files must be saved to the standard Android Downloads folder. Upon success, the user must receive a simple Toast message notification.
+	
+
+	DATA-03
+	CSV/TXT Structure
+	Must include column headers and the data fields (timestamp, mood_value, severity).
+	DATA-04
+	JSON Structure
+	Must be an array of objects, with each object containing the data fields.
+	4.4 Data Persistence (Local Storage)
+ID
+	Requirement
+	Description
+	PERSIST-01
+	Storage Mechanism
+	Data must be stored using a standard Android on-device persistence mechanism (e.g., Room Persistence Library or SQLite), ensuring durability even after the app is closed.
+	PERSIST-02
+	Internet Independence
+	The application must have zero dependency on internet connectivity for logging, viewing, or exporting data.
+	5. Answers to Technical/Design Questions (FINALIZED)
+Question Category
+	Question
+	Answer
+	Design/Navigation
+	1. Navigation Flow: How does the user switch between Mood Entry and the Graph?
+	Bottom Navigation Bar with support for swipe left and right gestures.
+	Design/Aesthetics
+	2. Aesthetic Direction: What is the desired color palette and style for the smileys?
+	Light theme, calming/sterile blues and greens. Simple, flat smiley icons.
+	Design/UX
+	3. Hold Feedback (UI-04): What is the preferred visual indication of increasing severity while holding?
+	The smiley must grow larger and shake. At max intensity (Severity 10), the extreme moods (0 & 4) must transform into exaggerated icons.
+	Visualization
+	4. Visualization Scale (Y-Axis): Should the Y-axis show numerical values (0-4) or text labels?
+	Text labels (Very Sad, Neutral, Happy, etc.).
+	Visualization
+	5. Initial Load View: Which time preset should be the default when the user first views the graph?
+	Default to 1 Week, but must remember and load the user's last selected filter.
+	Export/File Mngmt
+	6. Export Location: Where should the exported file be saved on the device?
+	The standard Android Downloads folder.
+	Export/File Mngmt
+	7. Export Confirmation: How should the user be notified when the export is complete?
+	A simple Toast message notification.
