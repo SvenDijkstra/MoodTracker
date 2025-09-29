@@ -1,0 +1,13 @@
+xml<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme using Material3 -->
+    <style name="Theme.AuraMoodTracker" parent="Theme.Material3.Light">
+        <!-- Customize your light theme here -->
+    </style>
+    
+    <!-- NoActionBar variant -->
+    <style name="Theme.AuraMoodTracker.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
