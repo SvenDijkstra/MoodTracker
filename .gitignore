@@ -20,6 +20,7 @@
 *.log
 # NDK
 /obj
+*.hprof
 
 #---------------------------------------------------#
 # IDE and Local Configuration
