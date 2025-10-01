@@ -17,12 +17,37 @@ E:.
 +---app
 ¦   +---build
 ¦   ¦   +---generated
+¦   ¦   ¦   +---ap_generated_sources
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---out
+¦   ¦   ¦   +---hilt
+¦   ¦   ¦   ¦   +---component_sources
+¦   ¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦   ¦       +---com
+¦   ¦   ¦   ¦   ¦           +---aura
+¦   ¦   ¦   ¦   ¦               +---moodtracker
+¦   ¦   ¦   ¦   +---component_trees
+¦   ¦   ¦   ¦       +---debug
+¦   ¦   ¦   ¦           +---com
+¦   ¦   ¦   ¦           ¦   +---aura
+¦   ¦   ¦   ¦           ¦       +---moodtracker
+¦   ¦   ¦   ¦           +---dagger
+¦   ¦   ¦   ¦               +---hilt
+¦   ¦   ¦   ¦                   +---internal
+¦   ¦   ¦   ¦                       +---processedrootsentinel
+¦   ¦   ¦   ¦                           +---codegen
 ¦   ¦   ¦   +---ksp
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---java
 ¦   ¦   ¦   ¦       ¦   +---com
 ¦   ¦   ¦   ¦       ¦   ¦   +---aura
 ¦   ¦   ¦   ¦       ¦   ¦       +---moodtracker
+¦   ¦   ¦   ¦       ¦   ¦           +---data
+¦   ¦   ¦   ¦       ¦   ¦           ¦   +---database
+¦   ¦   ¦   ¦       ¦   ¦           ¦   +---repository
+¦   ¦   ¦   ¦       ¦   ¦           +---di
+¦   ¦   ¦   ¦       ¦   ¦           +---ui
+¦   ¦   ¦   ¦       ¦   ¦               +---viewmodels
 ¦   ¦   ¦   ¦       ¦   +---dagger
 ¦   ¦   ¦   ¦       ¦   ¦   +---hilt
 ¦   ¦   ¦   ¦       ¦   ¦       +---internal
@@ -42,12 +67,43 @@ E:.
 ¦   ¦   ¦   +---annotation_processor_list
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---javaPreCompileDebug
+¦   ¦   ¦   +---apk_ide_redirect_file
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---createDebugApkListingFileRedirect
 ¦   ¦   ¦   +---app_metadata
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---writeDebugAppMetadata
 ¦   ¦   ¦   +---assets
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---mergeDebugAssets
+¦   ¦   ¦   +---classes
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---transformDebugClassesWithAsm
+¦   ¦   ¦   ¦           +---dirs
+¦   ¦   ¦   ¦           ¦   +---com
+¦   ¦   ¦   ¦           ¦   ¦   +---aura
+¦   ¦   ¦   ¦           ¦   ¦       +---moodtracker
+¦   ¦   ¦   ¦           ¦   ¦           +---data
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---database
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---preferences
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---repository
+¦   ¦   ¦   ¦           ¦   ¦           +---di
+¦   ¦   ¦   ¦           ¦   ¦           +---ui
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---components
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---screens
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---theme
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---viewmodels
+¦   ¦   ¦   ¦           ¦   ¦           +---utils
+¦   ¦   ¦   ¦           ¦   +---dagger
+¦   ¦   ¦   ¦           ¦   ¦   +---hilt
+¦   ¦   ¦   ¦           ¦   ¦       +---internal
+¦   ¦   ¦   ¦           ¦   ¦           +---aggregatedroot
+¦   ¦   ¦   ¦           ¦   ¦           ¦   +---codegen
+¦   ¦   ¦   ¦           ¦   ¦           +---processedrootsentinel
+¦   ¦   ¦   ¦           ¦   ¦               +---codegen
+¦   ¦   ¦   ¦           ¦   +---hilt_aggregated_deps
+¦   ¦   ¦   ¦           ¦   +---META-INF
+¦   ¦   ¦   ¦           +---jars
 ¦   ¦   ¦   +---compatible_screen_manifest
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---createDebugCompatibleScreenManifests
@@ -66,10 +122,55 @@ E:.
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---packageDebugResources
 ¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---desugar_graph
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   ¦               +---currentProject
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_0
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_1
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_2
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_3
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_4
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_5
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_6
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_7
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_8
+¦   ¦   ¦   ¦               ¦   +---dirs_bucket_9
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_0
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_1
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_2
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_3
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_4
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_5
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_6
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_7
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_8
+¦   ¦   ¦   ¦               ¦   +---jar_470ae00ce4ba7b8557c50b062d835ff0c6f892dba91c6ab9f13e9016b82c5c44_bucket_9
+¦   ¦   ¦   ¦               +---externalLibs
+¦   ¦   ¦   ¦               +---mixedScopes
+¦   ¦   ¦   ¦               +---otherProjects
 ¦   ¦   ¦   +---dex
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---mergeExtDexDebug
 ¦   ¦   ¦   ¦       +---mergeLibDexDebug
+¦   ¦   ¦   ¦       ¦   +---0
+¦   ¦   ¦   ¦       ¦   +---1
+¦   ¦   ¦   ¦       ¦   +---10
+¦   ¦   ¦   ¦       ¦   +---11
+¦   ¦   ¦   ¦       ¦   +---12
+¦   ¦   ¦   ¦       ¦   +---13
+¦   ¦   ¦   ¦       ¦   +---14
+¦   ¦   ¦   ¦       ¦   +---15
+¦   ¦   ¦   ¦       ¦   +---2
+¦   ¦   ¦   ¦       ¦   +---3
+¦   ¦   ¦   ¦       ¦   +---4
+¦   ¦   ¦   ¦       ¦   +---5
+¦   ¦   ¦   ¦       ¦   +---6
+¦   ¦   ¦   ¦       ¦   +---7
+¦   ¦   ¦   ¦       ¦   +---8
+¦   ¦   ¦   ¦       ¦   +---9
+¦   ¦   ¦   ¦       +---mergeProjectDexDebug
 ¦   ¦   ¦   ¦           +---0
 ¦   ¦   ¦   ¦           +---1
 ¦   ¦   ¦   ¦           +---10
@@ -86,15 +187,63 @@ E:.
 ¦   ¦   ¦   ¦           +---7
 ¦   ¦   ¦   ¦           +---8
 ¦   ¦   ¦   ¦           +---9
+¦   ¦   ¦   +---dex_archive_input_jar_hashes
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   +---dex_number_of_buckets_file
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
 ¦   ¦   ¦   +---duplicate_classes_check
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---checkDebugDuplicateClasses
 ¦   ¦   ¦   +---external_file_lib_dex_archives
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---desugarDebugFileDependencies
+¦   ¦   ¦   +---external_libs_dex_archive
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---external_libs_dex_archive_with_artifact_transforms
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_dex
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugGlobalSynthetics
+¦   ¦   ¦   +---global_synthetics_external_lib
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_external_libs_artifact_transform
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
 ¦   ¦   ¦   +---global_synthetics_file_lib
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---desugarDebugFileDependencies
+¦   ¦   ¦   +---global_synthetics_mixed_scope
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_project
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---global_synthetics_subproject
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---hilt
+¦   ¦   ¦   ¦   +---component_classes
+¦   ¦   ¦   ¦       +---debug
+¦   ¦   ¦   ¦           +---com
+¦   ¦   ¦   ¦           ¦   +---aura
+¦   ¦   ¦   ¦           ¦       +---moodtracker
+¦   ¦   ¦   ¦           +---dagger
+¦   ¦   ¦   ¦               +---hilt
+¦   ¦   ¦   ¦                   +---internal
+¦   ¦   ¦   ¦                       +---processedrootsentinel
+¦   ¦   ¦   ¦                           +---codegen
 ¦   ¦   ¦   +---incremental
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦   ¦   +---mergeDebugResources
@@ -192,15 +341,68 @@ E:.
 ¦   ¦   ¦   ¦   ¦       +---merged.dir
 ¦   ¦   ¦   ¦   ¦       ¦   +---values
 ¦   ¦   ¦   ¦   ¦       +---stripped.dir
+¦   ¦   ¦   ¦   +---debug-mergeJavaRes
+¦   ¦   ¦   ¦   ¦   +---zip-cache
 ¦   ¦   ¦   ¦   +---mergeDebugAssets
 ¦   ¦   ¦   ¦   +---mergeDebugJniLibFolders
 ¦   ¦   ¦   ¦   +---mergeDebugShaders
+¦   ¦   ¦   ¦   +---packageDebug
+¦   ¦   ¦   ¦   ¦   +---tmp
+¦   ¦   ¦   ¦   ¦       +---debug
+¦   ¦   ¦   ¦   ¦           +---zip-cache
+¦   ¦   ¦   ¦   +---transformDebugClassesWithAsm
+¦   ¦   ¦   +---javac
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---compileDebugJavaWithJavac
+¦   ¦   ¦   ¦           +---classes
+¦   ¦   ¦   ¦               +---com
+¦   ¦   ¦   ¦               ¦   +---aura
+¦   ¦   ¦   ¦               ¦       +---moodtracker
+¦   ¦   ¦   ¦               ¦           +---data
+¦   ¦   ¦   ¦               ¦           ¦   +---database
+¦   ¦   ¦   ¦               ¦           ¦   +---repository
+¦   ¦   ¦   ¦               ¦           +---di
+¦   ¦   ¦   ¦               ¦           +---ui
+¦   ¦   ¦   ¦               ¦               +---viewmodels
+¦   ¦   ¦   ¦               +---dagger
+¦   ¦   ¦   ¦               ¦   +---hilt
+¦   ¦   ¦   ¦               ¦       +---internal
+¦   ¦   ¦   ¦               ¦           +---aggregatedroot
+¦   ¦   ¦   ¦               ¦               +---codegen
+¦   ¦   ¦   ¦               +---hilt_aggregated_deps
+¦   ¦   ¦   +---java_res
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---processDebugJavaRes
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   ¦               +---com
+¦   ¦   ¦   ¦               ¦   +---aura
+¦   ¦   ¦   ¦               ¦       +---moodtracker
+¦   ¦   ¦   ¦               ¦           +---data
+¦   ¦   ¦   ¦               ¦           ¦   +---database
+¦   ¦   ¦   ¦               ¦           ¦   +---preferences
+¦   ¦   ¦   ¦               ¦           ¦   +---repository
+¦   ¦   ¦   ¦               ¦           +---di
+¦   ¦   ¦   ¦               ¦           +---ui
+¦   ¦   ¦   ¦               ¦           ¦   +---components
+¦   ¦   ¦   ¦               ¦           ¦   +---screens
+¦   ¦   ¦   ¦               ¦           ¦   +---theme
+¦   ¦   ¦   ¦               ¦           ¦   +---viewmodels
+¦   ¦   ¦   ¦               ¦           +---utils
+¦   ¦   ¦   ¦               +---dagger
+¦   ¦   ¦   ¦               ¦   +---hilt
+¦   ¦   ¦   ¦               ¦       +---internal
+¦   ¦   ¦   ¦               ¦           +---processedrootsentinel
+¦   ¦   ¦   ¦               ¦               +---codegen
+¦   ¦   ¦   ¦               +---META-INF
 ¦   ¦   ¦   +---local_only_symbol_list
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---parseDebugLocalResources
 ¦   ¦   ¦   +---manifest_merge_blame_file
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---processDebugMainManifest
+¦   ¦   ¦   +---merged_java_res
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---mergeDebugJavaResource
 ¦   ¦   ¦   +---merged_jni_libs
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---mergeDebugJniLibFolders
@@ -223,6 +425,10 @@ E:.
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---mergeDebugShaders
 ¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---mixed_scope_dex_archive
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
 ¦   ¦   ¦   +---navigation_json
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---extractDeepLinksDebug
@@ -240,6 +446,32 @@ E:.
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---processDebugResources
 ¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   +---project_dex_archive
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
+¦   ¦   ¦   ¦               +---com
+¦   ¦   ¦   ¦               ¦   +---aura
+¦   ¦   ¦   ¦               ¦       +---moodtracker
+¦   ¦   ¦   ¦               ¦           +---data
+¦   ¦   ¦   ¦               ¦           ¦   +---database
+¦   ¦   ¦   ¦               ¦           ¦   +---preferences
+¦   ¦   ¦   ¦               ¦           ¦   +---repository
+¦   ¦   ¦   ¦               ¦           +---di
+¦   ¦   ¦   ¦               ¦           +---ui
+¦   ¦   ¦   ¦               ¦           ¦   +---components
+¦   ¦   ¦   ¦               ¦           ¦   +---screens
+¦   ¦   ¦   ¦               ¦           ¦   +---theme
+¦   ¦   ¦   ¦               ¦           ¦   +---viewmodels
+¦   ¦   ¦   ¦               ¦           +---utils
+¦   ¦   ¦   ¦               +---dagger
+¦   ¦   ¦   ¦               ¦   +---hilt
+¦   ¦   ¦   ¦               ¦       +---internal
+¦   ¦   ¦   ¦               ¦           +---aggregatedroot
+¦   ¦   ¦   ¦               ¦           ¦   +---codegen
+¦   ¦   ¦   ¦               ¦           +---processedrootsentinel
+¦   ¦   ¦   ¦               ¦               +---codegen
+¦   ¦   ¦   ¦               +---hilt_aggregated_deps
 ¦   ¦   ¦   +---runtime_symbol_list
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---processDebugResources
@@ -252,6 +484,10 @@ E:.
 ¦   ¦   ¦   +---stable_resource_ids_file
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---processDebugResources
+¦   ¦   ¦   +---sub_project_dex_archive
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦       +---dexBuilderDebug
+¦   ¦   ¦   ¦           +---out
 ¦   ¦   ¦   +---symbol_list_with_package_name
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---processDebugResources
@@ -259,15 +495,74 @@ E:.
 ¦   ¦   ¦       +---debug
 ¦   ¦   ¦           +---validateSigningDebug
 ¦   ¦   +---kotlin
+¦   ¦   ¦   +---compileDebugKotlin
+¦   ¦   ¦   ¦   +---cacheable
+¦   ¦   ¦   ¦   ¦   +---caches-jvm
+¦   ¦   ¦   ¦   ¦       +---inputs
+¦   ¦   ¦   ¦   ¦       +---jvm
+¦   ¦   ¦   ¦   ¦       ¦   +---kotlin
+¦   ¦   ¦   ¦   ¦       +---lookups
+¦   ¦   ¦   ¦   +---classpath-snapshot
+¦   ¦   ¦   ¦   +---local-state
 ¦   ¦   ¦   +---kspDebugKotlin
 ¦   ¦   ¦       +---cacheable
 ¦   ¦   ¦       +---classpath-snapshot
 ¦   ¦   ¦       +---local-state
 ¦   ¦   +---kspCaches
 ¦   ¦   ¦   +---debug
+¦   ¦   ¦       +---backups
+¦   ¦   ¦       ¦   +---java
+¦   ¦   ¦       ¦       +---byRounds
+¦   ¦   ¦       ¦           +---1
+¦   ¦   ¦       ¦           ¦   +---com
+¦   ¦   ¦       ¦           ¦   ¦   +---aura
+¦   ¦   ¦       ¦           ¦   ¦       +---moodtracker
+¦   ¦   ¦       ¦           ¦   ¦           +---data
+¦   ¦   ¦       ¦           ¦   ¦           ¦   +---database
+¦   ¦   ¦       ¦           ¦   ¦           ¦   +---repository
+¦   ¦   ¦       ¦           ¦   ¦           +---di
+¦   ¦   ¦       ¦           ¦   ¦           +---ui
+¦   ¦   ¦       ¦           ¦   ¦               +---viewmodels
+¦   ¦   ¦       ¦           ¦   +---dagger
+¦   ¦   ¦       ¦           ¦   ¦   +---hilt
+¦   ¦   ¦       ¦           ¦   ¦       +---internal
+¦   ¦   ¦       ¦           ¦   ¦           +---aggregatedroot
+¦   ¦   ¦       ¦           ¦   ¦               +---codegen
+¦   ¦   ¦       ¦           ¦   +---hilt_aggregated_deps
+¦   ¦   ¦       ¦           +---2
+¦   ¦   ¦       ¦               +---com
+¦   ¦   ¦       ¦               ¦   +---aura
+¦   ¦   ¦       ¦               ¦       +---moodtracker
+¦   ¦   ¦       ¦               ¦           +---ui
+¦   ¦   ¦       ¦               ¦               +---viewmodels
+¦   ¦   ¦       ¦               +---hilt_aggregated_deps
+¦   ¦   ¦       +---classLookups
 ¦   ¦   ¦       +---logs
+¦   ¦   ¦       +---symbolLookups
 ¦   ¦   +---outputs
-¦   ¦       +---logs
+¦   ¦   ¦   +---apk
+¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   +---logs
+¦   ¦   +---tmp
+¦   ¦       +---compileDebugJavaWithJavac
+¦   ¦       +---hiltJavaCompileDebug
+¦   ¦       +---kotlin-classes
+¦   ¦           +---debug
+¦   ¦               +---com
+¦   ¦               ¦   +---aura
+¦   ¦               ¦       +---moodtracker
+¦   ¦               ¦           +---data
+¦   ¦               ¦           ¦   +---database
+¦   ¦               ¦           ¦   +---preferences
+¦   ¦               ¦           ¦   +---repository
+¦   ¦               ¦           +---di
+¦   ¦               ¦           +---ui
+¦   ¦               ¦           ¦   +---components
+¦   ¦               ¦           ¦   +---screens
+¦   ¦               ¦           ¦   +---theme
+¦   ¦               ¦           ¦   +---viewmodels
+¦   ¦               ¦           +---utils
+¦   ¦               +---META-INF
 ¦   +---src
 ¦       +---main
 ¦           +---java
