@@ -1,13 +1,15 @@
-xml<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme using Material3 -->
-    <style name="Theme.AuraMoodTracker" parent="Theme.Material3.Light">
-        <!-- Customize your light theme here -->
-    </style>
+    <style name="Theme.AuraMoodTracker" parent="android:Theme.Material.Light.NoActionBar" />
     
-    <!-- NoActionBar variant -->
-    <style name="Theme.AuraMoodTracker.NoActionBar">
+    <!-- NoActionBar variant (same as base since base already has NoActionBar) -->
+    <style name="Theme.AuraMoodTracker.NoActionBar" parent="Theme.AuraMoodTracker" />
+
+        <!-- <item name="colorPrimary">@color/primary_calm</item>
+        <item name="colorOnPrimary">@color/on_primary_calm</item>
+        <item name="colorPrimaryContainer">@color/primary_container_calm</item>
+        
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-    </style>
+    </style> -->
 </resources>

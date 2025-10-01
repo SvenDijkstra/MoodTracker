@@ -2,4 +2,7 @@
 <resources>
     <color name="primary_blue">#007BFF</color>
     <color name="background_light">#F8F9FA</color>
+    <color name="primary_calm">#4682B4</color> 
+    <color name="on_primary_calm">#FFFFFF</color>
+    <color name="primary_container_calm">#B0C4DE</color>
 </resources>

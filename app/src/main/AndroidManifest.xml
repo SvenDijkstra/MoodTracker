@@ -13,13 +13,13 @@
         android:label="Aura Mood Tracker"
         android:roundIcon="@android:drawable/ic_dialog_info"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AuraMoodTracker.NoActionBar"
+        android:theme="@style/Theme.AuraMoodTracker"
         tools:targetApi="31">
         
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AuraMoodTracker.NoActionBar">
+            android:theme="@style/Theme.AuraMoodTracker">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

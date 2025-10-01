@@ -1,8 +1,8 @@
 plugins {
-    // Apply plugins declared in the root build.gradle.kts
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp") // Apply KSP here for Room compiler
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -24,7 +24,6 @@ android {
     }
 
     composeOptions {
-        // Use the Kotlin Compiler Extension version that matches your Kotlin version (1.9.23)
         kotlinCompilerExtensionVersion = "1.5.11" 
     }
 
@@ -39,13 +38,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        // Match the compileOptions JVM target
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -65,19 +63,23 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.navigation:navigation-compose:2.7.6")
 
-    // Room (Data Persistence)
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.48")
+    ksp("com.google.dagger:hilt-compiler:2.48")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    // Room
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    // IMPORTANT: Using ksp() for the compiler dependency
     ksp("androidx.room:room-compiler:2.6.1")
 
-    // DataStore (User Preferences)
+    // DataStore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    // JSON (for Data Export utility)
+    // JSON
     implementation("com.google.code.gson:gson:2.10.1")
 
     // Debug
