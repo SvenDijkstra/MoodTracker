@@ -20,6 +20,14 @@ E:.
 ¦   ¦   ¦   +---ksp
 ¦   ¦   ¦   ¦   +---debug
 ¦   ¦   ¦   ¦       +---java
+¦   ¦   ¦   ¦       ¦   +---com
+¦   ¦   ¦   ¦       ¦   ¦   +---aura
+¦   ¦   ¦   ¦       ¦   ¦       +---moodtracker
+¦   ¦   ¦   ¦       ¦   +---dagger
+¦   ¦   ¦   ¦       ¦   ¦   +---hilt
+¦   ¦   ¦   ¦       ¦   ¦       +---internal
+¦   ¦   ¦   ¦       ¦   ¦           +---aggregatedroot
+¦   ¦   ¦   ¦       ¦   ¦               +---codegen
 ¦   ¦   ¦   ¦       ¦   +---hilt_aggregated_deps
 ¦   ¦   ¦   ¦       +---kotlin
 ¦   ¦   ¦   +---res
@@ -261,25 +269,25 @@ E:.
 ¦   ¦   +---outputs
 ¦   ¦       +---logs
 ¦   +---src
-¦       +---data
-¦       ¦   +---database
-¦       ¦   +---preferences
-¦       ¦   +---repository
 ¦       +---main
-¦       ¦   +---java
-¦       ¦   ¦   +---com
-¦       ¦   ¦       +---aura
-¦       ¦   ¦           +---moodtracker
-¦       ¦   ¦               +---di
-¦       ¦   +---res
-¦       ¦       +---values
-¦       +---models
-¦       +---ui
-¦       ¦   +---components
-¦       ¦   +---screens
-¦       ¦   +---theme
-¦       ¦   +---viewmodels
-¦       +---utils
+¦           +---java
+¦           ¦   +---com
+¦           ¦       +---aura
+¦           ¦           +---moodtracker
+¦           ¦               +---data
+¦           ¦               ¦   +---database
+¦           ¦               ¦   +---preferences
+¦           ¦               ¦   +---repository
+¦           ¦               +---di
+¦           ¦               +---models
+¦           ¦               +---ui
+¦           ¦               ¦   +---components
+¦           ¦               ¦   +---screens
+¦           ¦               ¦   +---theme
+¦           ¦               ¦   +---viewmodels
+¦           ¦               +---utils
+¦           +---res
+¦               +---values
 +---build
 ¦   +---reports
 ¦       +---problems
