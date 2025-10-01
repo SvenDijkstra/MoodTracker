@@ -1,8 +1,6 @@
 package com.aura.moodtracker.ui.screens
 
-
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -34,6 +32,7 @@ fun VisualizationScreen(
     val moodLogs by viewModel.moodLogs.collectAsState()
     val customStartTime by viewModel.customStartTime.collectAsState()
     val customEndTime by viewModel.customEndTime.collectAsState()
+    val context = LocalContext.current
     
     var showCustomRangePicker by remember { mutableStateOf(false) }
     var showExportDialog by remember { mutableStateOf(false) }
@@ -126,7 +125,6 @@ fun VisualizationScreen(
         ExportDialog(
             onDismiss = { showExportDialog = false },
             onExport = { format ->
-                val context = LocalContext.current
                 coroutineScope.launch {
                     ExportUtils.exportMoodData(
                         context = context,
@@ -153,8 +151,6 @@ fun CustomRangePickerDialog(
         title = { Text("Select Date Range") },
         text = {
             Column {
-                // Simplified date picker implementation
-                // In production, use proper date picker libraries
                 Text("Start Date: ${SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(startDate.time)}")
                 Text("End Date: ${SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(endDate.time)}")
             }
@@ -181,6 +177,11 @@ fun ExportDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text("Cancel")
+            }
+        },
         title = { Text("Export Format") },
         text = {
             Column {
@@ -192,11 +193,6 @@ fun ExportDialog(
                         Text(format)
                     }
                 }
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Cancel")
             }
         }
     )
